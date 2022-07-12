@@ -5,6 +5,10 @@
     <title>实验室人员</title>
 </head>
 <body>
-aaaaaaaa
+    {% for user in users %}
+        {{ user }}
+    {% endfor %}
+    <br>
+    <a href="{% url 'register' %}">添加</a>
 </body>
 </html>

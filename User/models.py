@@ -18,3 +18,5 @@ class User(models.Model):
     # 联系电话
     phoneNumber = models.CharField(max_length=30)
 
+    # 邮箱
+    email = models.CharField(max_length=30, default='')
