@@ -20,3 +20,6 @@ class User(models.Model):
 
     # 邮箱
     email = models.CharField(max_length=30, default='')
+
+    def __str__(self):
+        return self.name

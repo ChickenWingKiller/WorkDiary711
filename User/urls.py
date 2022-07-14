@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     re_path(r'^$', views.index, name='index'),
-    re_path(r'^users$', views.user_list, name='user_list'),
-    re_path(r'^users/register/$', views.register, name='register'),
-    re_path(r'^users/login/$', views.login, name='login'),
+    re_path(r'^all$', views.user_list, name='user_list'),
+    re_path(r'^register/$', views.register, name='register'),
+    re_path(r'^login/$', views.login, name='login'),
 ]

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3gystbt_6sf_l99$(a^k$vv@)kh1x)1dj+hd))_qpp-##_u_b6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-laptop_ip = '192.168.167.15'
+laptop_ip = '192.168.102.15'
 ALLOWED_HOSTS = [laptop_ip]
 
 
@@ -58,7 +58,7 @@ ROOT_URLCONF = 'WorkDiary711.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,6 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "statics"),
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type

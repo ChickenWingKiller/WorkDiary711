@@ -6,6 +6,7 @@
 </head>
 <body>
     {% for user in users %}
+        <a href="{% url 'register' %}">{{ user }}</a>
         {{ user }}
     {% endfor %}
     <br>
