@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>实验室人员</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
     {% for user in users %}
-        <a href="{% url 'register' %}">{{ user }}</a>
-        {{ user }}
+        {% if user.pk == login_id %}
+        {{ user.name }} <a href="{% url 'list_own_journal_date' %}">查看日志</a> <a href="{% url 'create_journal' %}">添加日志</a>
+        {% else %}
+        {{ user.name }} <a href="{% url 'list_other_journal_date' user_pk=user.pk%}">查看日志</a>
+<!--        <a href="{% url 'register' %}">{{ user }}</a>-->
+<!--        {{ user }}-->
+        {% endif %}
+        <br>
     {% endfor %}
     <br>
-    <a href="{% url 'register' %}">添加</a>
+    <a href="{% url 'test' %}">添加</a>
 </body>
 </html>

@@ -9,7 +9,8 @@ class Journal(models.Model):
     author =models.ForeignKey(User, on_delete=models.PROTECT)
     title =models.CharField(max_length=100)
     text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
+    # created_date = models.DateTimeField(default=timezone.now)
+    created_date = models.CharField(max_length=50)
     last_modified_date =models.DateTimeField(blank=True, null=True)
 
     def modify(self):

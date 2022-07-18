@@ -1,16 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="stylesheet" href="/static/plugins/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css">
+<!--        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">-->
+<!--        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">-->
+<!--    <link rel="stylesheet" href="{% static 'bootstrap/qifei_css/bootstrap.css' %}">-->
+<!--    <link rel="stylesheet" href="{% static 'md_css/code.css' %}">-->
+<!--        <link rel="stylesheet" href="/static/plugins/bootstrap-grid.min.css">-->
+    <!--    <link rel="stylesheet" href="{% static 'css/test.css' %}">-->
 </head>
 <body>
-    <h1>登陆界面</h1>
-    <form method="post">{% csrf_token %}
-        {{form.as_p}}
-        <button type="submit">登录</button>
-    </form>
+<h1>登陆界面</h1>
+<form method="post">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">登录</button>
+</form>
 </body>
 </html>

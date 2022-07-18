@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-3gystbt_6sf_l99$(a^k$vv@)kh1x)1dj+hd))_qpp-##_u_b6
 DEBUG = True
 
 laptop_ip = '192.168.102.15'
-ALLOWED_HOSTS = [laptop_ip]
+laptop_ip_2 = '192.168.232.15'
+ALLOWED_HOSTS = [laptop_ip, laptop_ip_2]
 
 
 # Application definition

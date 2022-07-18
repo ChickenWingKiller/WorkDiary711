@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    {% for journal in journals %}-->
+        <a href="{% url 'journal_detail' journal_pk=journal.pk %}">{{journal.created_date}}</a> <br>
+    {% endfor %}
+{% endblock content%}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    {% for journal in journals %}-->
+<!--        <a href="{% url 'journal_detail' journal_pk=journal.pk %}">{{journal.created_date}}</a> <br>-->
+<!--    {% endfor %}-->
+<!--</body>-->
+<!--</html>-->
