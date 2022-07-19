@@ -1,15 +1,39 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>注册用户</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>新用户注册</h1>-->
+<!--    <form method="post">{% csrf_token %}-->
+<!--        {{ form.as_p }}-->
+<!--        <button type="submit">添加！</button>-->
+<!--    </form>-->
+
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>注册用户</title>
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>Title</title>
 </head>
 <body>
-    <h1>新用户注册</h1>
-    <form method="post">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">添加！</button>
+    <div class="container">
+        <form method="post" action="/user/register/" class="login-form">{% csrf_token %}
+            <h2>注册</h2>
+            <input type="text" name="name" placeholder="姓名">
+            <input type="text" name="username" placeholder="用户名">
+            <input type="text" name="email" placeholder="邮箱">
+            <input type="text" name="password" placeholder="密码">
+<!--            <input type="text" name="password_confirm" placeholder="重复密码">-->
+<!--            <input type="submit" value="登录">-->
+            <button type="submit">注册</button>
     </form>
-
+    </div>
 </body>
 </html>

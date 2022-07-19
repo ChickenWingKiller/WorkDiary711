@@ -20,11 +20,12 @@ def journal_create(request):
             journal = form.save(commit=False)
             journal.author = user
             journal_create_date = date.isoformat(timezone.now())
-            print(type(journal_create_date)) # string
-            print(journal_create_date) # 2022-07-15
+            # print(type(journal_create_date)) # string
+            # print(journal_create_date) # 2022-07-15
             journal.created_date = journal_create_date
             journal.save()
-            return redirect('test')
+            # return redirect('test')
+            return redirect('user_list')
     else:
         form = JournalForm()
     return render(request, 'journal/create.html', {'form': form})

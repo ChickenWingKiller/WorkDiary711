@@ -20,15 +20,22 @@ def user_list(request):
 
 def register(request):
     if request.method == "POST":
-        form = UserForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.save()
-            # return redirect('post_detail', pk=post.pk)
-            return redirect('user_list')
-    else:
-        form = UserForm()
-    return render(request, 'user/register.html', {'form': form})
+        # form = UserForm(request.POST)
+        # if form.is_valid():
+        #     post = form.save(commit=False)
+        #     post.save()
+        #     # return redirect('post_detail', pk=post.pk)
+        #     return redirect('user_list')
+        name = request.POST['name']
+        email = request.POST['email']
+        username = request.POST['username']
+        password = request.POST['password']
+        User.objects.create(name=name, username=username, password=password, email=email)
+        return redirect("user_list")
+    # else:
+    #     form = UserForm()
+    # return render(request, 'user/register.html', {'form': form})
+    return render(request, 'user/register.html', {})
 
 def login(request):
     if request.method == "POST":
@@ -61,13 +68,21 @@ def login(request):
 def login_test(request):
     if request.method == "GET":
         return render(request, "user/login_test.html")
-    # username = request.POST.get("username")
-    # password = request.POST.get("password")
     username = request.POST['username']
     password = request.POST['password']
-    print(username)
-    print(password)
-    return render(request, "user/login_test.html", {'rlt':username})
+    user = User.objects.filter(username=username, password=password)
+    if (len(user) == 1):
+        user_id = user[0].pk
+        # auth.login(request, user)
+        # return render(request, 'user/success.html', {})
+        # response = redirect('/user/all/')
+        response = redirect('user_list')
+        response.set_cookie('is_login', True)
+        response.set_cookie('login_id', user_id)
+        return response
+    # print(username)
+    # print(password)
+    return render(request, "user/login_test.html", {'rlt': username})
 
 def index(request):
     login_id = 'False'

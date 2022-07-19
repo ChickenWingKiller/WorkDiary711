@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>New post</h1>
+    <h1>添加工作日志（将自动生成当前日期）</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Save</button>
