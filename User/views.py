@@ -11,7 +11,7 @@ from django.contrib import auth
 
 def user_list(request):
     login_id = int(request.COOKIES.get('login_id'))
-    users = User.objects.all()
+    users = User.objects.all() # type(users):django.db.models.query.QuerySet.   <QuerySet [<User: 李岳峰>, <User: 梅西>]>
     return render(request, 'user/user_list.html', {'users' : users, 'login_id' : login_id})
 
 # def register(request):

@@ -1,0 +1,17 @@
+in view.py,
+response = redirect('xxx'),
+xxx 是url.py中的一条path的name，path('s/', views.s, name='xxx')
+
+in view.py,
+return render(request, 'xxx.html', {'users' : users}),
+xxx是html文件，根目录是templates
+
+in xxx.html,
+表单中的action，action="/user/login"，
+是提交表单后去访问的url: 项目ip/user/login
+
+in xxx.html,
+超链接中，<a href="{% url 'create_journal' %}">添加日志</a>
+{%%}中是urls.py中一条path的name，path('create', views.journal_create, name='create_journal')
+带参数的情况，html中：<a href="{% url 'list_other_journal_date' user_pk=user.pk%}">查看日志</a>
+            urls.py中：re_path(r'^list_date/(?P<user_pk>[0-9]+)/$', views.other_journal_date, name='list_other_journal_date'),

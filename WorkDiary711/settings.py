@@ -28,7 +28,8 @@ DEBUG = True
 
 laptop_ip = '192.168.102.15'
 laptop_ip_2 = '192.168.232.15'
-ALLOWED_HOSTS = [laptop_ip, laptop_ip_2]
+laptop_ip_2 = '192.168.224.15'
+ALLOWED_HOSTS = [laptop_ip, laptop_ip_2, '*']
 
 
 # Application definition
